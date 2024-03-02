@@ -1,38 +1,42 @@
-.App {
-  text-align: center;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.backGr{
+    background-image: url(./backGr.jpg);
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.myOpacity {
+    background-color: rgba(255, 255, 255, 1);
+    z-index: 80
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.banner {
+    position: absolute;
+    height: 200;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.myBlock {
+    height: 80%;
+    width: 80%;
+    position: absolute;
+    display: flex;
+    backdrop-filter: blur();
+    margin: 10%;
+    margin-top: 60px;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.myBlock2 {
+    height: 80%;
+    width: 80%;
+    display: flex;
+    background-color: azure;
+    
+    /* backdrop-filter: blur(30%); */
 }
