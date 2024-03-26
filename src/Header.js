@@ -1,25 +1,23 @@
+import user from "./user.png"
+import heart from "./heart.png"
+
 const links = [
-    {
-        text: "Logo",
-        url: "/",
-    },
+
     {
         text: "Главная",
         url: "/",
-    },
-    {
-    },
-    {
-        text: "Контакты",
-        url: "/contacts",
     },
     {
         text: "О нас",
         url: "/about",
     },
     {
-        text: "Корзина",
-        url: "/liked",
+        text: "Каталог",
+        url: "/catalog",
+    },
+    {
+        text: "Блог",
+        url: "/Blog",
     },
 
 ];
@@ -29,9 +27,15 @@ function Header() {
     const linksJsx = links.map((elem, i) => {
         return <Link text={elem.text} url={elem.url} key={i} />
     });
+    linksJsx.push( 
+        <img src={heart} className="h-16"/>
+    );
+    linksJsx.push( 
+        <img src={user} className="h-16"/>
+    );
     return (
         <header>
-            <nav className=" flex justify-around align-middle py-2 ">
+            <nav className="flex justify-around align-items-center py-2 text-2xl ">
                 {linksJsx}
             </nav>
         </header>
