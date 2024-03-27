@@ -28,14 +28,18 @@ function Header() {
         return <Link text={elem.text} url={elem.url} key={i} />
     });
     linksJsx.push( 
-        <img src={heart} className="h-16"/>
+        <a href="/favourites" className="min-w-[70px] min-h-[70px] justify-self-center">
+            <img src={heart} className="w-[69px] hover:w-[70px] " alt="fav"/>
+        </a>
     );
     linksJsx.push( 
-        <img src={user} className="h-16"/>
+        <a href="/user" className="min-w-[70px] min-h-[70px] ">
+            <img src={user} className="w-[69px] hover:w-[70px] " alt="user" />
+        </a>
     );
     return (
-        <header>
-            <nav className="flex justify-around align-items-center py-2 text-2xl ">
+        <header className="header-h z-20">
+            <nav className="flex justify-around py-2 text-3xl ">
                 {linksJsx}
             </nav>
         </header>
@@ -44,7 +48,7 @@ function Header() {
 
 function Link({text, url}) {
     return (
-        <a className="text-black hover:text-[#99CC99]" href={url}>{text}</a>
+        <a className="text-black hover:text-violetmain self-center" href={url}>{text}</a>
     );
 }
 
