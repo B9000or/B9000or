@@ -3,20 +3,24 @@ import './App.css';
 import Header from './Header';
 // import About from './About';
 import Main from './Main'
+import Footer from './Footer';
 
 function App() {
   return (
     <div>
-      <div className=" h-[90px] " />
-      <Header className='px-[15%]  top-0 z-20 '/>
+      <div className="" />
+      <Header className='px-[15%] top-0 z-20 '/>
 
       <Main />
-      <div className=" h-[900px] " />
-      {/* <Popular />
-      <Connection />
+      
+      
+      <div className=" h-[1000px] " />
+      <Footer />
+      {/* <Popular /> в работе
+      <Connection /> в работе
       <About />
       <Reviews />
-      <Footer /> */}
+      <Footer /> есть юпиии */}
     </div>
   );
 }
