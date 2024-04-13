@@ -1,3 +1,5 @@
+import Header from './Header';
+import Footer from './Footer';
 import nav from "./nav.png"
 import vk from "./vk_logo.png"
 import tg from "./tg_logo.png"
@@ -62,20 +64,21 @@ const images = [
       alt: 'par_sport',
       text: 'Спортивный',
     },
-    // Добавьте нужное количество объектов для каждого изображения в слайдере
   ];  
 
 let butMain = "shadow-lg shadow-violet-500/50 absolute top-[640px] py-[30px] px-[80px] left-[17%] text-3xl font-[350] border-violetmain border-4 justify-center hover:opacity-80"
 
 let h1main = "flex text-4xl w-[100%] py-[100px] justify-center"
 
-function Main(){
+function MainPage(){
     return(
-        <div>
-            <First />
-            <Popular />
-            <Connection />
-        </div>
+      <div>
+        <Header />
+        <First />
+        <Popular />
+        <Connection />
+        <Footer />
+      </div>
     )
 }
 
@@ -96,48 +99,22 @@ function Popular(){
     return(
         <div>
             <h1 className={h1main}>Популярное</h1>
-            <div className="justify-center flex">
+            <div className="justify-center flex ">
                 <IconSlider />
             </div>
         </div>
     )
 }
 
-function HorizontalSlider() {
-    const [activeIndex, setActiveIndex] = useState(0); // Состояние для активного индекса
-  
-    const handleSlideChange = (index) => {
-      setActiveIndex(index); // Обновляем активный индекс при смене слайда
-    };
-  
-    return (
-      <div className="slider-container">
-        <div className="slider">
-          {/* Маппим изображения и текст */}
-          {images.map((item, index) => (
-            <div
-              key={index}
-              className={`slide ${index === activeIndex ? 'active' : ''}`}
-              onClick={() => handleSlideChange(index)}
-            >
-              <img src={item.image} alt={item.alt} />
-              <div className="text">{item.text}</div>
-            </div>
-          ))}
-        </div>
-      </div>
-    );
-  }
-
 function Connection(){
     return(
-        <div>
+        <div className='mb-8'>
             <h1 className={h1main}>Связь с нами</h1>
             <div className="tabs flex justify-center">
                 <nav className="tabs_items flex flex-col mt-[0px]">
                     <a href="#tab1" className="tabs_item h-[100px] z-10 w-[300px] items-center justify-center flex text-2xl border solid mt-[0px]">Наш офис</a>
                     <a href="#tab2" className="tabs_item h-[100px] z-10 w-[300px] items-center justify-center flex text-2xl border solid mt-[40px]">Социальные сети</a>
-                    <a href="#tab3" className="tabs_item h-[100px] z-10 w-[300px] items-center justify-center flex text-2xl border solid mt-[40px]">Оставить отзыв</a>
+                    <a href="#tab3" className="tabs_item h-[100px] z-10 w-[300px] items-center justify-center flex text-2xl border solid mt-[40px]">Оставить сообщение</a>
                     <a href="#tab4" className="tabs_item h-[100px] z-10 w-[300px] items-center justify-center flex text-2xl border solid mt-[40px]">Служба поддержки</a>
                 </nav>
                 <div className="tabs_body w-[50%] relative">
@@ -212,20 +189,32 @@ function IconSlider() {
           <div className="slider">
             {activeIcon === "icon1" && (
               // Парашют
-              <div>
-                <HorizontalSlider />
+              <div className='mb-[350px]'>
+                <div className="flex justify-between w-[60%] absolute left-[20%]">
+                  <img src={par_classic} alt="Классический" className="w-[28%] h-[350px] transition-transform transform hover:scale-110 " />
+                  <img src={par_sport} alt="Спортивный" className="w-[28%] h-[350px] transition-transform transform hover:scale-110" />
+                  <img src={par_tandem} alt="В тандеме" className="w-[28%] h-[350px] transition-transform transform hover:scale-110" />
+                </div>
               </div>
             )}
             {activeIcon === "icon2" && (
               // Дайвинг
-              <div>
-                {/* Содержимое слайдера для иконки 2 */}
+              <div className='mb-[350px]'>
+                <div className="flex justify-between w-[60%] absolute left-[20%]">
+                  <img src={par_classic} alt="Классический" className="w-[28%] h-[350px] transition-transform transform hover:scale-110 " />
+                  <img src={par_sport} alt="Спортивный" className="w-[28%] h-[350px] transition-transform transform hover:scale-110" />
+                  <img src={par_tandem} alt="В тандеме" className="w-[28%] h-[350px] transition-transform transform hover:scale-110" />
+                </div>
               </div>
             )}
             {activeIcon === "icon3" && (
               // Фотостудия
-              <div>
-                {/* Содержимое слайдера для иконки 3 */}
+              <div className='mb-[350px]'>
+                  <div className="flex justify-between w-[60%] absolute left-[20%]">
+                  <img src={par_classic} alt="Классический" className="w-[28%] h-[350px] transition-transform transform hover:scale-110 " />
+                  <img src={par_sport} alt="Спортивный" className="w-[28%] h-[350px] transition-transform transform hover:scale-110" />
+                  <img src={par_tandem} alt="В тандеме" className="w-[28%] h-[350px] transition-transform transform hover:scale-110" />
+                </div>
               </div>
             )}
           </div>
@@ -239,7 +228,7 @@ function ErrorBlock() {
       <div className="w-[90%] h-[90%] m-[20px] bg-white rounded p-8 shadow-md">
         <div className="mb-4">
           <p className="text-gray-700 mb-2">Если у вас возникли проблемы по поводу нашего сайта или услуги, пожалуйста,
-          обратитесь <a href="https://vk.com/club208533320" className="text-blue-500">сюда</a>.</p>
+          обратитесь <a href="./AppAbout.js" className="text-blue-500">сюда</a>.</p>
         </div>
         <div className="mt-4">
           <p className="text-gray-700">Также вы можете просмотреть частые вопросы и ответы на них 
@@ -251,7 +240,7 @@ function ErrorBlock() {
   
 function FeedbackForm() {
     return (
-      <div className="w-[700px] mx-auto bg-white rounded p-8 shadow-md">
+      <div className="w-[80%] mx-auto bg-white rounded p-8 shadow-md">
         <h2 className="text-2xl mb-6">Оставьте сообщение нам через форму, если вы ещё не зарегестрировались.</h2>
         <form>
           <div className="mb-4">
@@ -272,4 +261,4 @@ function FeedbackForm() {
     );
 }
 
-export default Main
+export default MainPage

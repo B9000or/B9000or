@@ -4,7 +4,7 @@ const myaw = "text-black hover:text-blue-700 text-xl p-[10px]"
 
 function Footer() {
     return (
-      <footer className="bg-[#C0C0C0] py-8">
+      <footer className="bg-[#C0C0C0] py-8 ">
         <div className="flex justify-around flex-row px-[15%]">
           <div className="text-start flex flex-col ">
             <a className={myaw}>8 (800) 535 35-35</a>

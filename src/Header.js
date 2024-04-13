@@ -9,15 +9,15 @@ const links = [
     },
     {
         text: "О нас",
-        url: "/about",
+        url: "/AboutPage",
     },
     {
         text: "Каталог",
-        url: "/catalog",
+        url: "/CatalogPage",
     },
     {
         text: "Блог",
-        url: "/Blog",
+        url: "/BlogPage",
     },
 
 ];
@@ -39,7 +39,7 @@ function Header() {
     );
     return (
         <header className="header-h z-20">
-            <nav className="flex justify-around py-2 text-3xl ">
+            <nav className="flex justify-around py-2 text-2xl mx-[10%]">
                 {linksJsx}
             </nav>
         </header>
