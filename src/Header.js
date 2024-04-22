@@ -28,12 +28,12 @@ function Header() {
         return <Link text={elem.text} url={elem.url} key={i} />
     });
     linksJsx.push( 
-        <a href="/favourites" className="min-w-[70px] min-h-[70px] justify-self-center">
+        <a href="/FavPage" className="min-w-[70px] min-h-[70px] justify-self-center">
             <img src={heart} className="w-[69px] hover:w-[70px] " alt="fav"/>
         </a>
     );
     linksJsx.push( 
-        <a href="/user" className="min-w-[70px] min-h-[70px] ">
+        <a href="/RegPage" className="min-w-[70px] min-h-[70px] ">
             <img src={user} className="w-[69px] hover:w-[70px] " alt="user" />
         </a>
     );

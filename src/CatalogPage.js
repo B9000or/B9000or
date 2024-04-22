@@ -79,10 +79,10 @@ function ThemselfCatalog() {
 
 function NewExpCatalog() {
     const products = [
-        { id: 31, path: '/DaivingPage', image: 'product_themself_1.jpg', description: 'Дайвинг', price: 'от 3700 руб' },
-        { id: 32, path: '/OthersPage', image: 'product_themself_2.jpg', description: 'Квесты', price: 'от 2400 руб' },
-        { id: 33, path: '/OthersPage', image: 'product_themself_3.jpg', description: 'Замок грёз', price: 'от 6700 руб' },
-        { id: 34, path: '/OthersPage', image: 'product_themself_4.jpg', description: 'Воздушный шар', price: 'от 480 руб' },
+        { id: 31, path: '/DaivingPage', image: 'https://avatars.mds.yandex.net/i?id=d540525ed1b62edd6cc2be3e62c817ecbb144d4f-12817767-images-thumbs&n=13', description: 'Дайвинг', price: 'от 3700 руб' },
+        { id: 32, path: '/OthersPage', image: 'https://avatars.mds.yandex.net/i?id=fa84c033ff2534e95b76b0a210fdf480f22062ec-10157084-images-thumbs&n=13', description: 'Квесты', price: 'от 2400 руб' },
+        { id: 33, path: '/OthersPage', image: 'https://avatars.mds.yandex.net/i?id=6837b3a01588bd3aef5026dfa91db4757b73e199-10576628-images-thumbs&n=13', description: 'Замок грёз', price: 'от 6700 руб' },
+        { id: 34, path: '/OthersPage', image: 'https://avatars.mds.yandex.net/i?id=928a9079b38737dd5702e0f1a81c5e587b1c395e-11444350-images-thumbs&n=13', description: 'Воздушный шар', price: 'от 480 руб' },
     ];
   
     return (
@@ -105,7 +105,7 @@ function NewExpCatalog() {
 
 function TheLastOnCatalog(){
     return(
-        <div className="flex items-center justify-center h-[400px] bg-cover bg-[url('./catalogLast.jpg')]">
+        <div className="flex items-center justify-center h-[400px] bg-cover bg-[url('./catalogLast.jpg')] bg-center">
             <div className="max-w-2xl text-center p-8">
                 <p className="text-lg mb-4">На данный момент это все предоставляемые услуги. 
                 Со временем мы будем расширять список и добавлять всё больше нового.</p>

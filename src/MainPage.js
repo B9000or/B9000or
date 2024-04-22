@@ -16,7 +16,7 @@ import './App.css'
 import par_classic from "./par_image3.png"
 import par_tandem from "./par_image1.png"
 import par_sport from "./par_image2.png"
-
+import { Link } from "react-router-dom";
 
 const SocialBlock = ({ network, icon, features }) => (
     <div className="w-[25%] text-1xl flex flex-col border solid px-[10px] mx-[5px] h-[400px] bg-white rounded shadow-md">
@@ -26,6 +26,7 @@ const SocialBlock = ({ network, icon, features }) => (
       ))}
     </div>
 );
+
 const socialNetworks = [
     {
       network: 'ВКонтакте',
@@ -88,9 +89,11 @@ function First(){
             <div className="w-[100%] h-[880px]  absolute top-[90px] -z-10 bg-[url(./main-back.PNG)] bg-no-repeat bg-cover bg-center">
             </div>
             <div className="absolute inset-x-0 top-[390px] h-16 w-[29%] left-[15%] text-5xl text-violetmain">ТО САМОЕ, ЧТО ВЫ ДАВНО ХОТЕЛИ</div>
-            <button type="button" className={butMain}>
+            <Link to="/CatalogPage">
+              <button type="button" className={butMain}>
                 Записаться
-            </button>
+              </button>
+            </Link>
         </div>
     )
 }
@@ -228,11 +231,11 @@ function ErrorBlock() {
       <div className="w-[90%] h-[90%] m-[20px] bg-white rounded p-8 shadow-md">
         <div className="mb-4">
           <p className="text-gray-700 mb-2">Если у вас возникли проблемы по поводу нашего сайта или услуги, пожалуйста,
-          обратитесь <a href="./AppAbout.js" className="text-blue-500">сюда</a>.</p>
+          обратитесь <a href="https://vk.com/budshirokimkakputin" className="text-violetmain">сюда</a>.</p>
         </div>
         <div className="mt-4">
           <p className="text-gray-700">Также вы можете просмотреть частые вопросы и ответы на них 
-          в нашем сборнике: <a href="/faq" className="text-blue-500">FAQ</a>.</p>
+          в нашем сборнике: <a href="/FaqPage" className="text-violetmain">FAQ</a>.</p>
         </div>
       </div>
     );

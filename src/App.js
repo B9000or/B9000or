@@ -6,6 +6,11 @@ import FotoStudioPage from './PageFotoStudio'
 import DaivingPage from './PageDaiving'
 import ParashoutPage from './PageParashout'
 import OthersPage from './PageOthers'
+import BlogPage from './BlogPage'
+import FavPage from './FavPage'
+import RegPage from './RegPage'
+import LogPage from './LogPage'
+
 import {
   createBrowserRouter,
   RouterProvider,
@@ -38,7 +43,23 @@ const router = createBrowserRouter([
   },
   {
     path: "/OthersPage",
-    element: <ParashoutPage />,
+    element: <OthersPage />,
+  },
+  {
+    path: "/BlogPage",
+    element: <BlogPage />,
+  },
+  {
+    path: "/FavPage",
+    element: <FavPage />,
+  },
+  {
+    path: "/RegPage",
+    element: <RegPage />,
+  },
+  {
+    path: "/LogPage",
+    element: <LogPage />,
   },
 ]);
 
