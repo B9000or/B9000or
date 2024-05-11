@@ -1,5 +1,5 @@
 import user from "./user.png"
-import heart from "./heart.png"
+import { Link } from "react-router-dom";
 
 const links = [
 
@@ -25,30 +25,30 @@ const links = [
 
 function Header() {
     const linksJsx = links.map((elem, i) => {
-        return <Link text={elem.text} url={elem.url} key={i} />
+        return <LinkLink text={elem.text} url={elem.url} key={i} />
     });
+
     linksJsx.push( 
-        <a href="/FavPage" className="min-w-[70px] min-h-[70px] justify-self-center">
-            <img src={heart} className="w-[69px] hover:w-[70px] " alt="fav"/>
-        </a>
-    );
-    linksJsx.push( 
-        <a href="/RegPage" className="min-w-[70px] min-h-[70px] ">
-            <img src={user} className="w-[69px] hover:w-[70px] " alt="user" />
-        </a>
+        <Link to="/RegPage">
+            <a className="min-w-[70px] min-h-[70px] ">
+                <img src={user} className="w-[69px] hover:w-[70px] " alt="user" />
+            </a>
+        </Link>
     );
     return (
-        <header className="header-h z-20">
-            <nav className="flex justify-around py-2 text-2xl mx-[10%]">
-                {linksJsx}
-            </nav>
-        </header>
+            <header className="header-h z-20">
+                <nav className="flex justify-around py-2 text-2xl mx-[10%]">
+                    {linksJsx}
+                </nav>
+            </header>
     );
 }
 
-function Link({text, url}) {
+function LinkLink({text, url}) {
     return (
-        <a className="text-black hover:text-violetmain self-center" href={url}>{text}</a>
+        <Link to={url} className="text-black hover:text-violetmain self-center">
+            <a  href={url}>{text}</a>
+        </Link>
     );
 }
 

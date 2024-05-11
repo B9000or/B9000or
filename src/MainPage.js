@@ -49,26 +49,8 @@ const socialNetworks = [
       features: ['Новости', 'Ответы на вопросы', 'Все ваши предложения']
     }
 ];
-const images = [
-    {
-      image: {par_classic},
-      alt: 'par_classic',
-      text: 'Классический',
-    },
-    {
-      image: {par_tandem},
-      alt: 'par_tandem',
-      text: 'Прыжок в тандеме',
-    },
-    {
-      image: {par_sport},
-      alt: 'par_sport',
-      text: 'Спортивный',
-    },
-  ];  
 
 let butMain = "shadow-lg shadow-violet-500/50 absolute top-[640px] py-[30px] px-[80px] left-[17%] text-3xl font-[350] border-violetmain border-4 justify-center hover:opacity-80"
-
 let h1main = "flex text-4xl w-[100%] py-[100px] justify-center"
 
 function MainPage(){

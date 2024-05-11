@@ -7,7 +7,6 @@ function RegPage() {
     <div>
       <div />
       <RegBlank />
-      
     </div>
   );
 }
@@ -26,16 +25,15 @@ function RegBlank(){
             <div className="gap-6">
                 <form className="flex flex-col gap-2">
                     <div className="flex flex-row gap-2">
-                        <input type="text" className="p-4 w-[188px] border bg-white rounded-lg" placeholder="Имя" />
-                        <input type="text" className="p-4 w-[188px] border bg-white rounded-lg" placeholder="Фамилия" />
+                        <input type="text" className="p-4 w-[188px] border bg-white rounded-lg focus:outline-none focus:ring focus:ring-violetmain" placeholder="Имя" />
+                        <input type="text" className="p-4 w-[188px] border bg-white rounded-lg focus:outline-none focus:ring focus:ring-violetmain" placeholder="Фамилия" />
                     </div>
-                    <input type="email" className="p-4 w-96 border bg-white rounded-lg" placeholder="Электронный адрес" />
-                    <input type="password" className="p-4 w-96 border bg-white rounded-lg" placeholder="Пароль" />
-                    <input type="password" className="p-4 w-96 border bg-white rounded-lg" placeholder="Повторите пароль" />
+                    <input type="email" className="p-4 w-96 border bg-white rounded-lg focus:outline-none focus:ring focus:ring-violetmain" placeholder="Электронный адрес" />
+                    <input type="password" className="p-4 w-96 border bg-white rounded-lg focus:outline-none focus:ring focus:ring-violetmain" placeholder="Пароль" />
+                    <input type="password" className="p-4 w-96 border bg-white rounded-lg focus:outline-none focus:ring focus:ring-violetmain" placeholder="Повторите пароль" />
                 </form>
             </div>
             <div className="flex flex-col justify-center items-center text-xs pl-1 text-[rgb(40,41,44)]">
-                
                 <div className="flex flex-row gap-1">
                     <input type="checkbox" className="p-4"/>
                     Я согласен  с 

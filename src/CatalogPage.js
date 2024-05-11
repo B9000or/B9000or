@@ -2,7 +2,7 @@ import './App.css';
 import Header from './Header';
 import Footer from './Footer';
 import Slider from 'react-slick';
-import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom';
+import { Link } from "react-router-dom";
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
@@ -40,7 +40,7 @@ function SportCatalog() {
                 <h1 className="text-4xl ml-[10%]">Спортивный отдых</h1>
             </div>
             <div className="container mx-auto p-4">
-                <p className="text-lg mb-8 ml-[10%]">Активное времяпрепровождение с пользой.</p>
+                <p className="text-2xl mb-8 ml-[10%]">Активное времяпрепровождение с пользой.</p>
                 <div className="grid grid-cols-4 gap-4">
                     {products.map((product, index) => (
                     <Product key={index} {...product} />
@@ -153,7 +153,7 @@ function ScrollToTop() {
 
 function TookToTheBlog() {
     return (
-        <Link to={"/AboutPage"}>
+        <Link to={"/BlogPage"}>
             <button className="text-violetmain">наш блог</button>
         </Link>
     );
