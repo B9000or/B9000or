@@ -10,14 +10,14 @@ function Footer() {
           <div className="text-start flex flex-col">
             <a className={myaw}>8 (800) 535 35-35</a>
             <a className={myaw}>pochta@mail.ru</a>
-            <a href="/about" className={myaw}>Больше связи</a>
+            <a href="/NotFound" className={myaw}>Больше связи</a>
           </div>
           <div className=" flex flex-col">
             <Link to="/CatalogPage" className={myaw}>
               <a>Перейти в каталог</a>
             </Link>
-            <a href="/partners" className={myaw}>Список партнёров</a>
-            <a href="/ps" className={myaw}>Пользовательское соглашение</a>
+            <a href="/NotFound" className={myaw}>Список партнёров</a>
+            <a href="/NotFound" className={myaw}>Пользовательское соглашение</a>
           </div>
           <div>
           <Link to="/">

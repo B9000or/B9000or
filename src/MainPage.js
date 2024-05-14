@@ -1,3 +1,6 @@
+import './App.css'
+import { useState } from 'react';
+import { Link } from "react-router-dom";
 import Header from './Header';
 import Footer from './Footer';
 import nav from "./nav.png"
@@ -11,12 +14,12 @@ import icon2 from "./icon2.png"
 import icon2_active from "./icon2_active.png"
 import icon3 from "./icon3.png"
 import icon3_active from "./icon3_active.png"
-import React, { useState } from 'react';
-import './App.css'
 import par_classic from "./par_image3.png"
 import par_tandem from "./par_image1.png"
 import par_sport from "./par_image2.png"
-import { Link } from "react-router-dom";
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 const SocialBlock = ({ network, icon, features }) => (
     <div className="w-[25%] text-1xl flex flex-col border solid px-[10px] mx-[5px] h-[400px] bg-white rounded shadow-md">
@@ -51,7 +54,7 @@ const socialNetworks = [
 ];
 
 let butMain = "shadow-lg shadow-violet-500/50 absolute top-[640px] py-[30px] px-[80px] left-[17%] text-3xl font-[350] border-violetmain border-4 justify-center hover:opacity-80"
-let h1main = "flex text-4xl w-[100%] py-[100px] justify-center"
+let h1main = "flex text-5xl w-[100%] pt-[150px] pb-[50px] justify-center got-bold"
 
 function MainPage(){
     return(
@@ -60,6 +63,7 @@ function MainPage(){
         <First />
         <Popular />
         <Connection />
+        <FeedbackSlider />
         <Footer />
       </div>
     )
@@ -70,7 +74,7 @@ function First(){
         <div className="h-[900px]">
             <div className="w-[100%] h-[880px]  absolute top-[90px] -z-10 bg-[url(./main-back.PNG)] bg-no-repeat bg-cover bg-center">
             </div>
-            <div className="absolute inset-x-0 top-[390px] h-16 w-[29%] left-[15%] text-5xl text-violetmain">ТО САМОЕ, ЧТО ВЫ ДАВНО ХОТЕЛИ</div>
+            <div className="absolute inset-x-0 top-[390px] h-16 w-[29%] left-[15%] text-5xl got-hard text-violetmain">ТО САМОЕ, ЧТО ВЫ ДАВНО ХОТЕЛИ</div>
             <Link to="/CatalogPage">
               <button type="button" className={butMain}>
                 Записаться
@@ -87,59 +91,6 @@ function Popular(){
             <div className="justify-center flex ">
                 <IconSlider />
             </div>
-        </div>
-    )
-}
-
-function Connection(){
-    return(
-        <div className='mb-8'>
-            <h1 className={h1main}>Связь с нами</h1>
-            <div className="tabs flex justify-center">
-                <nav className="tabs_items flex flex-col mt-[0px]">
-                    <a href="#tab1" className="tabs_item h-[100px] z-10 w-[300px] items-center justify-center flex text-2xl border solid mt-[0px]">Наш офис</a>
-                    <a href="#tab2" className="tabs_item h-[100px] z-10 w-[300px] items-center justify-center flex text-2xl border solid mt-[40px]">Социальные сети</a>
-                    <a href="#tab3" className="tabs_item h-[100px] z-10 w-[300px] items-center justify-center flex text-2xl border solid mt-[40px]">Оставить сообщение</a>
-                    <a href="#tab4" className="tabs_item h-[100px] z-10 w-[300px] items-center justify-center flex text-2xl border solid mt-[40px]">Служба поддержки</a>
-                </nav>
-                <div className="tabs_body w-[50%] relative">
-                    {/* <div id="\" className="w-[100%] h-[520px] bg-black flex absolute top-0 hidden target:block"></div> */}
-                    <div id="tab1" className="tabs_block target:flex target:bg-slate-100 target:flex-row border solid hidden pl-[20px] w-[100%] h-[520px]">
-                        <div className="w-[350px] flex flex-col ">
-                            <a className="text-2xl mt-[40px] py-[20px] bg-white px-[20px]">Адрес нашего офиса:</a>
-                            <a className="text-2xl pb-[40px] bg-white px-[20px]">Киришская улица, 2, Санкт-Петербург, 195299.</a>
-                            <a className="text-2xl h-[100%] bg-white px-[20px] mb-[40px]">Рядом метро: Гражданский проспект</a>
-                        </div>
-                        <div className="w-60% flex items-center bg-white my-[40px]">
-                            <img src={nav} className="w-[500px] "></img>
-                        </div>
-                        <div className="h-[100px] w-[300px] absolute bg-slate-100 z-1 left-[-300px] top-0"></div>
-                    </div>
-
-                    <div id="tab2" className="tabs_block target:flex target:bg-slate-100 target:flex-col border solid hidden px-[20px] w-[100%] h-[520px]">
-                        <a className="text-2xl m-[20px]">Наша активность в социальных сетях:</a>
-                        <div className="flex flex-row justify-around ">
-                            {socialNetworks.map((social, index) => (
-                            <   SocialBlock key={index} {...social} />
-                            ))}
-                        </div>
-                        <div className="h-[100px] w-[300px] absolute bg-slate-100 z-1 left-[-300px] top-[140px]"></div>
-                    </div>
-
-                    <div id="tab3" className="tabs_block target:flex target:bg-white target:flex-row hidden pl-[20px] w-[100%] h-[520px]">
-                        <FeedbackForm />
-                        <div className="h-[100px] w-[300px] absolute bg-slate-100 z-1 left-[-300px] bottom-[140px]"></div>
-                    </div>
-
-
-                    <div id="tab4" className="tabs_block target:flex target:bg-slate-100 target:flex-row border solid hidden pl-[20px] w-[100%] h-[520px]">
-                        <ErrorBlock />
-                        <div className="h-[100px] w-[300px] absolute bg-slate-100 z-1 left-[-300px] bottom-0"></div>
-                    </div>
-                </div>
-                
-            </div>
-
         </div>
     )
 }
@@ -208,16 +159,72 @@ function IconSlider() {
     );
 }
 
+function Connection() {
+  const [activeTab, setActiveTab] = useState('tab1');
+
+  const handleTabClick = (tabId) => {
+    setActiveTab(tabId);
+  };
+
+  return (
+    <div className='mb-8'>
+      <h1 className={h1main}>Связь с нами</h1>
+      <div className="tabs flex justify-center">
+        <nav className="tabs_items flex flex-col mt-[0px] text-3xl">
+          <div className={`tabs_item h-[100px] z-10 w-[300px] items-center justify-center flex cursor-pointer border mt-[0px] hover:text-[32px] ${activeTab === 'tab1' ? 'text-violetmain' : 'text-gray-800'}`} onClick={() => handleTabClick('tab1')}>Наш офис</div>
+          <div className={`tabs_item h-[100px] z-10 w-[300px] items-center justify-center flex cursor-pointer border mt-[40px] hover:text-[32px] ${activeTab === 'tab2' ? 'text-violetmain' : 'text-gray-800'}`} onClick={() => handleTabClick('tab2')}>Социальные сети</div>
+          <div className={`tabs_item h-[100px] z-10 w-[300px] items-center justify-center flex cursor-pointer border mt-[40px] hover:text-[32px] ${activeTab === 'tab3' ? 'text-violetmain' : 'text-gray-800'}`} onClick={() => handleTabClick('tab3')}>Оставить сообщение</div>
+          <div className={`tabs_item h-[100px] z-10 w-[300px] items-center justify-center flex cursor-pointer border mt-[40px] hover:text-[32px] ${activeTab === 'tab4' ? 'text-violetmain' : 'text-gray-800'}`} onClick={() => handleTabClick('tab4')}>Служба поддержки</div>
+        </nav>
+        <div className="tabs_body w-[50%] relative">
+          <div className={`${activeTab === 'tab1' ? 'block' : 'hidden'} flex flex-row border solid pl-[20px] h-[520px]`}>
+                  <div className="flex  flex-row  pl-[20px] w-[100%] h-[520px] text-3xl">
+                      <div className="w-[350px] flex flex-col ">
+                          <a className=" mt-[40px] py-[20px] bg-white px-[20px] ">Адрес нашего офиса:</a>
+                          <a className=" pb-[40px] bg-white px-[20px]">Киришская улица, 2, Санкт-Петербург, 195299.</a>
+                          <a className=" h-[100%] bg-white px-[20px] mb-[40px]">Рядом метро: Гражданский проспект</a>
+                      </div>
+                      <div className="w-60% flex items-center bg-white my-[40px]">
+                          <img src={nav} className="w-[500px] "></img>
+                      </div>
+                  </div>
+          </div>
+
+          <div className={`${activeTab === 'tab2' ? 'block' : 'hidden'} flex flex-col border solid pl-[20px] w-[100%] h-[520px]`}>
+            <div className="flex flex-col px-[20px] w-[100%] h-[520px]">
+              <a className="text-3xl m-[20px]">Наша активность в социальных сетях:</a>
+              <div className="flex flex-row justify-around text-2xl">
+                {socialNetworks.map((social, index) => (
+                <   SocialBlock key={index} {...social} />
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <div className={`${activeTab === 'tab3' ? 'block' : 'hidden'} flex flex-row pl-[20px] w-[100%] h-[520px]`}>
+            <ErrorBlock />
+          </div>
+
+          <div className={`${activeTab === 'tab4' ? 'block' : 'hidden'} flex flex-row pl-[20px] w-[100%] h-[520px]`}>
+            <FeedbackForm />
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+
 function ErrorBlock() {
     return (
-      <div className="w-[90%] h-[90%] m-[20px] bg-white rounded p-8 shadow-md">
+      <div className="w-[90%] h-[90%] m-[20px] bg-white rounded p-8 shadow-md text-2xl">
         <div className="mb-4">
           <p className="text-gray-700 mb-2">Если у вас возникли проблемы по поводу нашего сайта или услуги, пожалуйста,
           обратитесь <a href="https://vk.com/budshirokimkakputin" className="text-violetmain">сюда</a>.</p>
         </div>
         <div className="mt-4">
           <p className="text-gray-700">Также вы можете просмотреть частые вопросы и ответы на них 
-          в нашем сборнике: <a href="/FaqPage" className="text-violetmain">FAQ</a>.</p>
+          в нашем сборнике: <a href="/NotFound" className="text-violetmain">FAQ</a>.</p>
         </div>
       </div>
     );
@@ -225,7 +232,7 @@ function ErrorBlock() {
   
 function FeedbackForm() {
     return (
-      <div className="w-[80%] mx-auto bg-white rounded p-8 shadow-md">
+      <div className="w-[80%] mx-auto bg-white rounded p-8 shadow-md ">
         <h2 className="text-2xl mb-6">Оставьте сообщение нам через форму, если вы ещё не зарегестрировались.</h2>
         <form>
           <div className="mb-4">
@@ -238,12 +245,102 @@ function FeedbackForm() {
           </div>
           <div className="mb-4">
             <label htmlFor="message" className="block text-gray-700 font-bold mb-2">Сообщение</label>
-            <textarea id="message" name="message" rows="4" className="form-textarea w-full px-4 py-2 border rounded-md focus:outline-none focus:border-violetmain"></textarea>
+            <textarea id="message" name="message" rows="4" className="form-textarea w-full h-[80px] px-4 py-2 border rounded-md focus:outline-none focus:border-violetmain"></textarea>
           </div>
-          <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-violetmain focus:outline-none focus:bg-blue-600">Отправить</button>
+          <button type="submit" className="bg-white border text-black px-4 py-2 rounded-md hover:text-white hover:bg-violetmain">Отправить</button>
         </form>
       </div>
     );
 }
+
+const FeedbackSlider = () => {
+  const testimonials = [
+    {
+      name: 'Иван Петров',
+      date: '10 марта 2024',
+      rating: 5,
+      message: 'Как-то мне посоветовали библиотеки, что предлагает этот сайт. Что-то, а их набрали очень приятных. Амтосфера, дружелюбный персонал и комфортные места для чтения на ряду с огромным выбором книг. Но потом я из интереса решил просмотреть сайт полушче и увидел столько интересных услуг, самых разных. Как только мои родственники заговорили про семейную фотосессию, сразу в голвое всплыло, что здесь было и подобное, поэтому мы записались тут. Впечатления остались исключительно положительные!',
+      imageUrl: 'https://avatars.mds.yandex.net/i?id=be24c26340350a6beb3ff7eb8a7478cbbc45ed66-12441729-images-thumbs&n=13',
+    },
+    {
+      name: 'Анна Иванова',
+      date: '5 апреля 2024',
+      rating: 5,
+      message: 'Мне очень понравились возможности, которые даёт регистрация на сайте! Вместе с регситрацией открывается множество полезных и удобных функций. Как пользователь я могу смотреть историю всех моих бронирований ровно по порядку дат, что помогает мне смотреть и вспоминать то, что я уже прошла. К тому же, как приятный бонус появляется огромное количество различных акций и скидок. Всё это делает сайт очень удобным, а бронирование новых услуг приятным.',
+      imageUrl: 'https://avatars.mds.yandex.net/i?id=587b4865777e2dece32e0b22299bcb60ff22475d-12510920-images-thumbs&n=13',
+    },
+    {
+      name: 'Степа Бризлюков',
+      date: '20 апреля 2024',
+      rating: 4,
+      message: 'Услуги, которые предлагает сайт очень хорошие, но мне, как дизайнеру, иногда чего-то не хватает в оформлении. Казалось, можно было сделать и лучше.',
+      imageUrl: 'https://nztcdn.com/avatar/l/1708017697/7978136.webp',
+    },
+  ];
+
+  const NextArrowSlider = ({ onClick }) => (
+    <button className="absolute top-1/2 right-[5%] transform -translate-y-1/2 bg-white rounded-full p-2 z-10 " onClick={onClick}>
+      <svg xmlns="http://www.w3.org/2000/svg" className="h-20 w-20 text-violetmain" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+      </svg>
+    </button>
+  );
+
+  const PrevArrowSlider = ({ onClick }) => (
+    <button className="absolute top-1/2 left-[5%] transform -translate-y-1/2 bg-white rounded-full p-2 z-10" onClick={onClick}>
+      <svg xmlns="http://www.w3.org/2000/svg" className="h-20 w-20 text-violetmain" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+      </svg>
+    </button>
+  );
+
+  const settings = {
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    nextArrow: <NextArrowSlider />,
+    prevArrow: <PrevArrowSlider />,
+  };
+
+  const renderStars = (rating) => {
+    const stars = [];
+    for (let i = 0; i < rating; i++) {
+      stars.push('★');
+    }
+    for (let i = rating; i < 5; i++) {
+      stars.push('☆');
+    }
+    return stars.join('');
+  };
+
+  return (
+    <div>
+      <div className={h1main}> Отзывы</div>
+      <Slider {...settings} className='h-[500px] mb-[100px]'>
+        {testimonials.map((testimonial, index) => (
+          <div key={index}>
+            <div className="flex justify-center h-[500px]">
+              <div className="w-3/4 bg-white rounded-lg shadow-md h-[480px] p-6">
+                <div className="flex items-center mb-4">
+                  <img src={testimonial.imageUrl} className="w-[100px] h-[100px] object-cover rounded-full mx-[50px]" alt="Фото пользователя" />
+                  <div>
+                    <h3 className="text-3xl got-hard">{testimonial.name}</h3>
+                    <p className="text-gray-600 text-2xl got-light">{testimonial.date}</p>
+                  </div>
+                  <div className="ml-auto text-yellow-500 text-4xl pr-[50px]">
+                    {renderStars(testimonial.rating)}
+                  </div>
+                </div>
+                <p className="text-gray-700 m-[50px] text-2xl">{testimonial.message}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </Slider>
+    </div>
+  );
+};
+
 
 export default MainPage

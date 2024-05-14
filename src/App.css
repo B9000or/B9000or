@@ -2,6 +2,33 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: gothampro_black;
+  src: url(fonts/gothampro_black.ttf);
+  font-family: gothampro_medium;
+  src: url(fonts/gothampro_medium.ttf);
+  font-family: gothampro_light;
+  src: url(fonts/gothampro_light.ttf);
+  font-family: gothampro_hard;
+  src: url(fonts/gothampro_bold.ttf);
+}
+
+*{
+  font-family: gothampro_black;
+}
+
+.got-bold{
+  font-family: gothampro_medium;
+}
+
+.got-light{
+  font-family: gothampro_light;
+}
+
+.got-hard{
+  font-family: gothampro_hard;
+}
+
 .header-h{
   background: #ffffff;
   border-bottom: 1px solid #989ea4;

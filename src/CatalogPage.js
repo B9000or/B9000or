@@ -37,10 +37,10 @@ function SportCatalog() {
         <div className="my-[100px]" >
             <div className=" container mx-auto p-4 flex items-center relative">
                 <div className=" h-[4px] w-[30%] left-[-20%] absolute border-2 border-violetmain" />
-                <h1 className="text-4xl ml-[10%]">Спортивный отдых</h1>
+                <h1 className="text-5xl ml-[10%]">Спортивный отдых</h1>
             </div>
             <div className="container mx-auto p-4">
-                <p className="text-2xl mb-8 ml-[10%]">Активное времяпрепровождение с пользой.</p>
+                <p className="text-3xl mb-8 ml-[10%]">Активное времяпрепровождение с пользой.</p>
                 <div className="grid grid-cols-4 gap-4">
                     {products.map((product, index) => (
                     <Product key={index} {...product} />
@@ -63,10 +63,10 @@ function ThemselfCatalog() {
         <div className="my-[100px]" >
             <div className=" container mx-auto p-4 flex items-center relative">
                 <div className=" h-[4px] w-[30%] left-[-20%] absolute border-2 border-violetmain" />
-                <h1 className="text-4xl ml-[10%]">Время для себя</h1>
+                <h1 className="text-5xl ml-[10%]">Время для себя</h1>
             </div>
             <div className="container mx-auto p-4">
-                <p className="text-lg mb-8 ml-[10%]">Для тех, кто находит себя в своих увлечениях и расширяет их.</p>
+                <p className="text-3xl mb-8 ml-[10%]">Для тех, кто находит себя в своих увлечениях и расширяет их.</p>
             <div className="grid grid-cols-4 gap-4">
                 {products.map((product, index) => (
                   <Product key={index} {...product} />
@@ -89,10 +89,10 @@ function NewExpCatalog() {
         <div className="my-[100px]" >
             <div className=" container mx-auto p-4 flex items-center relative">
                 <div className=" h-[4px] w-[30%] left-[-20%] absolute border-2 border-violetmain" />
-                <h1 className="text-4xl ml-[10%]">Получение нового опыта</h1>
+                <h1 className="text-5xl ml-[10%]">Получение нового опыта</h1>
             </div>
             <div className="container mx-auto p-4">
-                <p className="text-lg mb-8 ml-[10%]">Расширение мировоззрения и получение незабываемых, новых ощущений.</p>
+                <p className="text-3xl mb-8 ml-[10%]">Расширение мировоззрения и получение незабываемых, новых ощущений.</p>
             <div className="grid grid-cols-4 gap-4">
                 {products.map((product, index) => (
                   <Product key={index} {...product} />
@@ -107,9 +107,9 @@ function TheLastOnCatalog(){
     return(
         <div className="flex items-center justify-center h-[400px] bg-cover bg-[url('./catalogLast.jpg')] bg-center">
             <div className="max-w-2xl text-center p-8">
-                <p className="text-lg mb-4">На данный момент это все предоставляемые услуги. 
+                <p className="text-3xl mb-4">На данный момент это все предоставляемые услуги. 
                 Со временем мы будем расширять список и добавлять всё больше нового.</p>
-                <p className="text-lg mb-4">Вы можете вернуться <ScrollToTop /> или проверить <TookToTheBlog /> с новостями, 
+                <p className="text-3xl mb-4">Вы можете вернуться <ScrollToTop /> или проверить <TookToTheBlog /> с новостями, 
                 если вы не нашли ничего для себя. Может, то самое для вас уже в наших планах?</p>
                 
             </div>
@@ -131,7 +131,7 @@ function Product({ id, path, image, description, price }) {
             {/* {PopaOO} */}
             <Link to={path}>
                 <img src={image} alt={description} className="w-[200px] h-[200px] object-cover rounded-md mb-2" />
-                <h2 className="text-lg font-semibold mb-2">{description}</h2>
+                <h2 className="text-xl font-semibold got-light mb-2">{description}</h2>
                 <p className="text-sm text-gray-600">Цена: {price}</p>
             </Link>
         </div>
@@ -172,17 +172,17 @@ function SliderTop() {
     <div>
         <Slider {...settings} className="mb-[100px] w-[100%]">
             <div>
-                <img src="https://sun9-86.userapi.com/impg/9qxSVhg6mBDYyKKlMuQ2aKDBhl_UIyisXlbmTg/I4sjloaTTxw.jpg?size=1280x318&quality=95&sign=92449158aafe05b96978073866e418c2&c_uniq_tag=TsCWZqiJK2gncOre9eN11WRq0-GQqxhmngJn9vvqXpE&type=album"
+                <img src="https://www.moy-dom27.ru/upload/iblock/9ce/1753352_1542139435.jpg"
                 alt="Изображение 1" 
                 className="h-[400px] object-cover w-[100%]" />
             </div>
             <div>
-                <img src="https://sun9-14.userapi.com/impg/-j6c-PFBQOy5Va85Yl3LfWWz1CzgtwDz1bvf8A/EityFT20sgM.jpg?size=807x454&quality=95&sign=0e8cd9717183e353eff5f5439e5a8de4&c_uniq_tag=h1vieqvonOv83ebyXAVzxun9m_7m1OYQASUxD32N-x4&type=album" 
+                <img src="https://static.tildacdn.com/tild3138-3734-4830-a330-326537383362/gift.png" 
                 alt="Изображение 2" 
                 className="w-[100%] h-[400px] object-cover" />
             </div>
             <div>
-                <img src="https://klincollege.ru/klncllgAssets/images/news/news/2024/04/wuhhxrwcshw-1.jpg" 
+                <img src="https://sportishka.com/uploads/posts/2022-11/1667482998_1-sportishka-com-p-malenkie-gornie-lizhi-oboi-1.jpg" 
                 alt="Изображение 3" 
                 className="w-[100%] h-[400px] object-cover" />
             </div>

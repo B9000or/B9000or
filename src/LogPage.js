@@ -1,16 +1,6 @@
 import { Link } from "react-router-dom";
 import image from "./logo-mini.png"
 
-function LogPage() {
-    return (
-      <div>
-        <div />
-        <LogBlank />
-        
-      </div>
-    );
-  }
-
 function LogBlank(){
     return(
         <div className="flex flex-col justify-center items-center py-[200px] gap-4 ">
@@ -29,8 +19,8 @@ function LogBlank(){
                     <input type="password" className="p-4 w-96 border focus:outline-none focus:ring focus:ring-violetmain bg-white rounded-lg" placeholder="Пароль" />
                 </form>
                 <div className="flex text-black justify-end">
-                    <Link to="/">
-                        Я забыл пароль
+                    <Link to="/NotFound">
+                        Я не помню пароль
                     </Link>
                 </div>
             </div>
@@ -45,7 +35,7 @@ function LogBlank(){
             <div className="flex flex-col justify-center items-center">
                 Если у вас ещё нет учётной записи, то вы можете
                 <div className="text-violetmain">
-                    <Link to="/">
+                    <Link to="/RegPage">
                         зарегистрироваться
                     </Link>
                 </div>
@@ -54,4 +44,4 @@ function LogBlank(){
     )
 }
 
-export default LogPage;
+export default LogBlank;

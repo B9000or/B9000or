@@ -1,6 +1,9 @@
 import './App.css';
 import Header from './Header';
 import Footer from './Footer';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 function AboutPage() {
   return (
@@ -9,8 +12,7 @@ function AboutPage() {
       <Header />
       <PhotoTop />
       <AboutStatic />
-      
-      <div className=" h-[1000px] " />
+      <BannerSlider />
       <Footer />
     </div>
   );
@@ -105,14 +107,6 @@ function AboutStatic () {
   );
 };
 
-function AboutStory(){
-  return(
-    <div>
-      
-    </div>
-  )
-}
-
 function PhotoTop(){
   return(
     <div>
@@ -121,7 +115,87 @@ function PhotoTop(){
       className="h-[400px] object-cover w-[100%]" />
     </div>
   )
-
 }
+
+function BannerSlider (){
+  const banners = [
+    {
+      title: 'Заголовок 1',
+      description: 'Описание баннера 1',
+      additionalInfo: 'Дополнительная информация 1',
+      imageUrl: 'https://via.placeholder.com/400x300',
+    },
+    {
+      title: 'Заголовок 2',
+      description: 'Описание баннера 2',
+      additionalInfo: 'Дополнительная информация 2',
+      imageUrl: 'https://via.placeholder.com/400x300',
+    },
+    {
+      title: 'Заголовок 3',
+      description: 'Описание баннера 3',
+      additionalInfo: 'Дополнительная информация 3',
+      imageUrl: 'https://via.placeholder.com/400x300',
+    },
+  ];
+
+  const NextArrow = ({ onClick }) => (
+    <button className="absolute top-1/2 right-[5%] transform -translate-y-1/2 bg-white rounded-full p-2 z-10 " onClick={onClick}>
+      <svg xmlns="http://www.w3.org/2000/svg" className="h-20 w-20 text-violetmain" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+      </svg>
+    </button>
+  );
+
+  const PrevArrow = ({ onClick }) => (
+    <button className="absolute top-1/2 left-[5%] transform -translate-y-1/2 bg-white rounded-full p-2 z-10" onClick={onClick}>
+      <svg xmlns="http://www.w3.org/2000/svg" className="h-20 w-20 text-violetmain" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+      </svg>
+    </button>
+  );
+
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />,
+  };
+
+  return (
+    <div>
+      <div className='flex justify-center mt-[100px]'>
+        <a className='text-5xl got-bold '>
+          Наши специалисты
+        </a>
+      </div>
+      <Slider {...settings} className="my-[100px]">
+        {banners.map((banner, index) => (
+          <div key={index}>
+            <div className="flex justify-center">
+              <div className="w-3/4 bg-gray-200 rounded-lg overflow-hidden flex">
+                <div className="w-1/2 p-8">
+                  <h2 className="text-2xl font-bold mb-4">{banner.title}</h2>
+                  <p className="text-lg mb-4">{banner.description}</p>
+                  <p className="text-sm text-gray-600">{banner.additionalInfo}</p>
+                </div>
+                <div className="w-1/2">
+                  <img
+                    className="object-cover h-full w-full"
+                    src={banner.imageUrl}
+                    alt="Изображение"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </Slider>
+    </div>
+  );
+};
 
 export default AboutPage;

@@ -1,4 +1,5 @@
 import user from "./user.png"
+import image from "./logo-mini.png"
 import { Link } from "react-router-dom";
 
 const links = [
@@ -22,22 +23,27 @@ const links = [
 
 ];
 
-
 function Header() {
     const linksJsx = links.map((elem, i) => {
         return <LinkLink text={elem.text} url={elem.url} key={i} />
     });
-
+    linksJsx.unshift( 
+        <Link to="/">
+            <a>
+                <img src={image} className="w-[70px]" alt='logo'/>
+            </a>
+        </Link>
+    );
     linksJsx.push( 
         <Link to="/RegPage">
-            <a className="min-w-[70px] min-h-[70px] ">
-                <img src={user} className="w-[69px] hover:w-[70px] " alt="user" />
+            <a>
+                <img src={user} className="w-[70px]" alt="user" />
             </a>
         </Link>
     );
     return (
             <header className="header-h z-20">
-                <nav className="flex justify-around py-2 text-2xl mx-[10%]">
+                <nav className="flex justify-around py-2 text-3xl mx-[10%]">
                     {linksJsx}
                 </nav>
             </header>

@@ -2,15 +2,6 @@ import './App.css';
 import image from "./logo-mini.png"
 import { Link } from "react-router-dom";
 
-function RegPage() {
-  return (
-    <div>
-      <div />
-      <RegBlank />
-    </div>
-  );
-}
-
 function RegBlank(){
     return(
         <div className="flex flex-col justify-center items-center py-[150px] gap-4 ">
@@ -33,13 +24,13 @@ function RegBlank(){
                     <input type="password" className="p-4 w-96 border bg-white rounded-lg focus:outline-none focus:ring focus:ring-violetmain" placeholder="Повторите пароль" />
                 </form>
             </div>
-            <div className="flex flex-col justify-center items-center text-xs pl-1 text-[rgb(40,41,44)]">
+            <div className="flex flex-col justify-center items-center pl-1 text-[rgb(40,41,44)]">
                 <div className="flex flex-row gap-1">
                     <input type="checkbox" className="p-4"/>
                     Я согласен  с 
-                    <Link to="/" className='text-violetmain text-xs'>условиями</Link>
+                    <Link to="/NotFound" className='text-violetmain'>условиями</Link>
                     и
-                    <Link to="/" className='text-violetmain'>политикой конфиденциальности</Link>
+                    <Link to="/NotFound" className='text-violetmain'>политикой конфиденциальности</Link>
                 </div>
             </div>
             <div className="flex justify-center">
@@ -62,4 +53,4 @@ function RegBlank(){
     )
 }
 
-export default RegPage
+export default RegBlank

@@ -10,6 +10,7 @@ import BlogPage from './BlogPage'
 import FavPage from './FavPage'
 import RegPage from './RegPage'
 import LogPage from './LogPage'
+import NotFound from './NotFoundPage'
 
 import {
   createBrowserRouter,
@@ -60,6 +61,10 @@ const router = createBrowserRouter([
   {
     path: "/LogPage",
     element: <LogPage />,
+  },
+  {
+    path: "/NotFound",
+    element: <NotFound />,
   },
 ]);
 
