@@ -127,9 +127,12 @@ function IconSlider() {
               // Парашют
               <div className='mb-[350px]'>
                 <div className="flex justify-between w-[60%] absolute left-[20%]">
-                  <img src={par_classic} alt="Классический" className="w-[28%] h-[350px] transition-transform transform hover:scale-110 " />
-                  <img src={par_sport} alt="Спортивный" className="w-[28%] h-[350px] transition-transform transform hover:scale-110" />
-                  <img src={par_tandem} alt="В тандеме" className="w-[28%] h-[350px] transition-transform transform hover:scale-110" />
+                  <img src={par_classic} alt="Классический" className="w-[28%] h-[350px] relative object-cover transition-transform transform hover:scale-110 " />
+                  <div className='absolute left-10 bottom-6 text-3xl got-hard text-white'>Классический</div>
+                  <img src={par_sport} alt="Спортивный" className="w-[28%] h-[350px] object-cover transition-transform transform hover:scale-110" />
+                  <div className='absolute left-[41%] bottom-6 text-3xl got-hard text-white'>Спортивный</div>
+                  <img src={par_tandem} alt="В тандеме" className="w-[28%] h-[350px] object-cover transition-transform transform hover:scale-110" />
+                  <div className='absolute left-[78%] bottom-6 text-3xl got-hard text-white'>В тандеме</div>
                 </div>
               </div>
             )}
@@ -137,9 +140,12 @@ function IconSlider() {
               // Дайвинг
               <div className='mb-[350px]'>
                 <div className="flex justify-between w-[60%] absolute left-[20%]">
-                  <img src={par_classic} alt="Классический" className="w-[28%] h-[350px] transition-transform transform hover:scale-110 " />
-                  <img src={par_sport} alt="Спортивный" className="w-[28%] h-[350px] transition-transform transform hover:scale-110" />
-                  <img src={par_tandem} alt="В тандеме" className="w-[28%] h-[350px] transition-transform transform hover:scale-110" />
+                  <img src="https://sportishka.com/uploads/posts/2022-03/1648046542_60-sportishka-com-p-daiver-v-more-turizm-krasivo-foto-69.jpg" alt="в море" className="relative w-[28%] h-[350px] object-cover transition-transform transform hover:scale-110 " />
+                  <div className='absolute left-10 bottom-6 text-3xl got-hard text-white'>Открытое море</div>
+                  <img src="https://sun9-49.userapi.com/impg/iI6MwGVIvb9PejDO8_SM8VpxPm2mLTTrvJddrQ/lxeoYyHXMX4.jpg?size=1080x1080&quality=96&sign=a441fbe35056147517b0aa46a056363c&c_uniq_tag=BMoAoqi5MZqhJZVRj_ipvaD2W9G6i7h9if4tCVeznmI&type=album" alt="бассейн" className="w-[28%] object-cover h-[350px] transition-transform transform hover:scale-110" />
+                  <div className='absolute left-[45%] bottom-6 text-3xl got-hard text-white'>Бассейн</div>
+                  <img src="https://arena-swim.ru/wp-content/uploads/9/7/d/97d5cb35faa9d6cbe2f7685c46527ff3.jpeg" alt="Обучающий" className="w-[28%] h-[350px] object-cover transition-transform transform hover:scale-110" />
+                  <div className='absolute left-[78%] bottom-6 text-3xl got-hard text-white'>Обучающий</div>
                 </div>
               </div>
             )}
@@ -147,9 +153,12 @@ function IconSlider() {
               // Фотостудия
               <div className='mb-[350px]'>
                   <div className="flex justify-between w-[60%] absolute left-[20%]">
-                  <img src={par_classic} alt="Классический" className="w-[28%] h-[350px] transition-transform transform hover:scale-110 " />
-                  <img src={par_sport} alt="Спортивный" className="w-[28%] h-[350px] transition-transform transform hover:scale-110" />
-                  <img src={par_tandem} alt="В тандеме" className="w-[28%] h-[350px] transition-transform transform hover:scale-110" />
+                  <img src="https://mykaleidoscope.ru/uploads/posts/2020-02/1582133080_50-p-krasivie-intereri-fotostudii-91.jpg" alt="Индивидуальный в студии" className="w-[28%] h-[350px] object-cover transition-transform transform hover:scale-110 " />
+                  <div className='absolute left-10 bottom-6 text-3xl got-hard text-white'>В студии</div>
+                  <img src="https://kinodeloff.ru/wp-content/uploads/2020/01/operator.jpg" alt="Для мероприятия" className="w-[28%] h-[350px] object-cover transition-transform transform hover:scale-110" />
+                  <div className='absolute left-[38%] bottom-6 text-3xl got-hard text-white'>На мероприятия</div>
+                  <img src="https://static.independent.co.uk/s3fs-public/thumbnails/image/2017/11/22/11/chuck-maroon-bells-1.jpg" alt="Индивидуальный на выезд" className="w-[28%] h-[350px] object-cover transition-transform transform hover:scale-110" />
+                  <div className='absolute left-[78%] bottom-6 text-3xl got-hard text-white'>На выезд</div>
                 </div>
               </div>
             )}
