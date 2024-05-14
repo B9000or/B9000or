@@ -4,6 +4,9 @@ import Footer from './Footer';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import colleg1 from "./1sotr.png";
+import colleg3 from "./3sotr.png";
+
 
 function AboutPage() {
   return (
@@ -120,22 +123,22 @@ function PhotoTop(){
 function BannerSlider (){
   const banners = [
     {
-      title: 'Заголовок 1',
-      description: 'Описание баннера 1',
-      additionalInfo: 'Дополнительная информация 1',
-      imageUrl: 'https://via.placeholder.com/400x300',
+      title: 'Иванский Макар Викторович',
+      description: 'Специалист по сотрудничеству',
+      additionalInfo: 'Набрать большое количество ответственных, креативных и в целом хороших людей — сложная задача, с которой Иванский справляется лучше всех. Большинство услуг на сайте является результатом успешного сотрудничества!',
+      imageUrl: colleg1,
     },
     {
-      title: 'Заголовок 2',
-      description: 'Описание баннера 2',
-      additionalInfo: 'Дополнительная информация 2',
-      imageUrl: 'https://via.placeholder.com/400x300',
+      title: 'Смоленская Анастасия Сергеевна',
+      description: 'Дизайнер и душа компании',
+      additionalInfo: 'Встречают по одёжке, провожают по ней же. Но только если вид в самом деле плохой. Наш дизайнер усердно старался над тем, чтобы внешний вид соответствовал наполнению сайта, отражал собой всю необычность и красоту наших развлекательных услуг.',
+      imageUrl: 'https://avatars.mds.yandex.net/i?id=6ca154ca7a60b7d3f69d16d12f7c81f422b45f83-10705627-images-thumbs&n=13',
     },
     {
-      title: 'Заголовок 3',
-      description: 'Описание баннера 3',
-      additionalInfo: 'Дополнительная информация 3',
-      imageUrl: 'https://via.placeholder.com/400x300',
+      title: 'Синячков Владимир Осипович',
+      description: 'Менеджер по маркетингу',
+      additionalInfo: 'Если вы хоть раз слышали о нашем сайте, значит, его работа выполнена прекрасно. Синячков делает так, чтобы никто из сотрудников не работал по напрасну а также, чтобы никто из уставших мог передать работу по отбору отличных проедложений — нам.',
+      imageUrl: colleg3,
     },
   ];
 
@@ -176,15 +179,15 @@ function BannerSlider (){
         {banners.map((banner, index) => (
           <div key={index}>
             <div className="flex justify-center">
-              <div className="w-3/4 bg-gray-200 rounded-lg overflow-hidden flex">
-                <div className="w-1/2 p-8">
-                  <h2 className="text-2xl font-bold mb-4">{banner.title}</h2>
-                  <p className="text-lg mb-4">{banner.description}</p>
-                  <p className="text-sm text-gray-600">{banner.additionalInfo}</p>
+              <div className="w-4/6 bg-gray-200 rounded-3xl overflow-hidden flex">
+                <div className="w-3/5 p-8">
+                  <h2 className="text-4xl font-bold mb-4">{banner.title}</h2>
+                  <p className="text-3xl mb-4">{banner.description}</p>
+                  <p className="text-2xl text-gray-600">{banner.additionalInfo}</p>
                 </div>
-                <div className="w-1/2">
+                <div className="w-2/5">
                   <img
-                    className="object-cover h-full w-full"
+                    className="object-cover h-[420px] w-full"
                     src={banner.imageUrl}
                     alt="Изображение"
                   />

@@ -10,7 +10,9 @@ function Footer() {
           <div className="text-start flex flex-col">
             <a className={myaw}>8 (800) 535 35-35</a>
             <a className={myaw}>pochta@mail.ru</a>
-            <a href="/NotFound" className={myaw}>Больше связи</a>
+            <Link to="/NotFound" className={myaw}>
+              <a>Больше связи</a>
+            </Link>
           </div>
           <div className=" flex flex-col">
             <Link to="/CatalogPage" className={myaw}>
